@@ -228,7 +228,7 @@
 
     <br>
 
-## **Javascript : DOM Manipulation**
+## **Javascript : DOM**
 - DOM singkatan dari Document Object Model. DOM adalah Programing interface pada document web. DOM ini mempresentasikan halaman dimana kita bisa merubah struktur style , konten.
 - DOM merupakan bukan bagian dari JavaScript/Bahasa pemrograman melainkan ini adalah sebuah web API untuk membanggun Websit yang artinya bisa di gunakan untuk bahasa pemrograman yang lain.
 - DOM merupakan jembaatan supaya bahasa pemrograman dapat berinteraksi dengan dokumen HTML.
@@ -352,7 +352,7 @@
     
     - Traversing ke Samping
         <div align="justify">Akses sibling atau saudaranya (sebelum atau sesudah elementnya)
-        
+
         - previousElementSiblingc
 
             ```javascript
@@ -363,6 +363,127 @@
             console.log(itemQuery.nextElementSibling);
             ```
 
+## **DOM Manipulation**
+Teknik manipulasi DOM merupakan teknik yang sangat penting dalam pengembangan website untuk meningkatkan interaktivitas dan kedinamisan. Ada banyak teknik untuk memanipulasinya, seperti membuat elemen baru, menyisipkan elemen, mengubah atribut, mengubah style, menambahkan event, dsb.
+
+- Memberikan konten pada html dangan *innerText* dan *innerHTML*
+    
+    ```javascript
+    app.innerText = "<h1>apa kabs</h1>"
+    app.innerHTML = "<h1>Hallo</h1>"
+    ```
+
+- membuat elemen dengan menggunakan *createElement()*
+
+    ```javascript
+    let p = document.createElement("p")
+    p.innerText = "ini adalah paragraf"
+    ```
+
+- menambahkan child kedalam parent menggunakan *append() dan appendChild*
+
+    ```javascript
+    app.append(p)
+    ```
+
+    ```javascript
+    // proses yg sama
+    let p2 = document.createElement("p")
+    p2.innerText = "paragraf ke-2"
+    app.appendChild(p2)
+    ```
+    - perbedaan append() dan appendChild :
+        <div align="justify">appendChild tidak bisa input data string
+
+        ```javascript
+        app.append("menggunakan append")
+        app.appendChild("appendChild") // error
+        ```
+
+- Menghapus element menggunakan remove()
+    ```javascript
+    let end = document.getElementById("end")
+    end.remove()
+    ```
+
+- Menambahakan atribut 
+    ```javascript
+    link.setAttribute("id", "google") // add attribute
+    ```
+
+- Memberikan style
+    <div align="justify">Kita bisa memberikan styling pada html dengan menggunakan javascript DOM
+
+    ```javascript
+    link.style.color = "black"
+    link.style.border = "1px solid black"
+    link.style.padding = "5px 20px"
+    link.style.backgroundColor = "aqua"
+    ```
+- Mendapatkan style dari element
+    ```javascript
+    let tess = document.getElementById("tess")
+    let tessStyle = getComputedStyle(tess)
+    console.log(tessStyle.height)
+    ```
+
+- Menambahnkan dan menghapus class
+    ```javascript
+    container.classList.add("home") // menambabhkan class
+    container.classList.remove("container") // menghapus class
+    ```
+    <br>
+
+## **JavaScript : DOM Events dan Forms**
+- Events adalah sebuah kejadian/kegiatan/interaksi yang user berikan kepada website.
+- Terdapat 3 cara dalam memberikan event, yaitu :
+    1. HTML Attribute.
+
+        ```javascript
+        <h1 onclick="alert('selamat datang')">Hallo</h1>
+        ```
+
+    2. Event propperty
+
+        ```javascript
+        <p id="paragraf">click me</p>
+ 
+        paragraf.onclick = function () {
+        alert("ini dari paragraf")
+        }
+        ```
+
+        Atau bisa juga dengan tampilkan alert
+
+        ```javascript
+        paragraf.onclick = tampilkanAlert
+
+        function tampilkanAlert () {
+        alert("ini alert")
+        }
+        ```
+    3. addEventListener()
+        ```javascript
+        <button id="btn">klik saya</button>
+
+        let button = document.getElementById("btn")
+        button.addEventListener("click", function (event) {
+        console.log(event.target)
+        alert("ini dari button")
+        })
+        ```
+
+- Event sendiri terdiri dari :
+    - click, adalah event yang terjadi ketika user melakukan klik atau tab.
+    - submit, adalah event yang biasanya terjadi pada form saat melakukan submision atau mengirim data pada form.
+    - focus, akan diaktifkan ketika user melakukan klik atau tab.
+    - blur, event terjadi karena element kehilangan fokus.
+    - hover,event yang terjadi karena mouse, dimana saat pointer berada diatas element.
+    - change, biasanya terjadi pada element input seperti input text, checkbox, radio, select-option, dan lain sebagainya. Event change terjadi saat nilai pada element tersebut berpindah.
+    - scroll, event terjadi ketika user melakukan scroll.
+
+    
+        
 
     
 
