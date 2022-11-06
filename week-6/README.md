@@ -518,16 +518,23 @@ Beberapa endpoint RESTFul :
     ```
 
 - Create New Todo
-    <div align="justify">Untuk Kita akan membuat sebuah routing entuk create new todo dengan syntax berikut
+    <div align="justify">Untuk Kita akan membuat sebuah routing entuk create new todo dengan syntax berikut :
+
+    <br>
 
     <img src ="gambar/create.png">
+
 - Update Todo By Id
     <div align="justify">Untuk Kita akan membuat sebuah routing entuk update todo by Id dengan syntax berikut
+
+    <br>
 
     <img src ="gambar/update.png">
 
 - Delete Todo
     <div align="justify">Untuk Kita akan membuat sebuah routing entuk delete todo by Id dengan syntax berikut
+
+    <br>
 
     <img src ="gambar/delete.png">
 
